@@ -31,8 +31,10 @@ const Services = () => {
               exit="hidden"
               className="mx-auto mb-4 max-w-[400px] lg:mx-0"
             >
-              Lorem ipsum jffjjnd jnhlqebrfq efhbhl qefn njdlwiqf eqlfl jfqfjb
-              hlfnlqe flqjfnq ejfn{" "}
+              Although I am certified as a FullStack Web Developer, I am
+              constantly learning how to improve my work.
+              <br />I am currently studying UX/UI design and SEO to provide a
+              better service.
             </motion.p>
           </div>
           {/* slider */}

@@ -14,7 +14,7 @@ const Work = () => {
       <div className="container mx-auto">
         <div className="flex flex-col gap-x-8 xl:flex-row">
           {/* text */}
-          <div className="mb-4 flex flex-col text-center lg:text-left xl:mb-0 xl:w-[30vw]">
+          <div className="mb-2 flex flex-col text-center lg:text-left xl:mb-0 xl:w-[30vw]">
             <motion.h2
               variants={fadeIn("up", 0.2)}
               initial="hidden"
@@ -29,10 +29,15 @@ const Work = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="mx-auto mb-4 max-w-[400px] lg:mx-0"
+              className="mx-auto mb-2 max-w-[400px] lg:mx-0"
             >
-              Lorem ipsum jffjjnd jnhlqebrfq efhbhl qefn njdlwiqf eqlfl jfqfjb
-              hlfnlqe flqjfnq ejfn{" "}
+              I have been working on personal and academic projects to improve
+              my skills as a developer. I use JavaScript frameworks such as
+              React, Next, TailwindCSS, Node and Express.
+              <br />
+              <span className="hidden md:flex">
+                Currently learning UX//UI design to enhance my skills.
+              </span>
             </motion.p>
           </div>
           {/* slider */}
