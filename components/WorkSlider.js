@@ -5,19 +5,23 @@ const workSlides = {
       images: [
         {
           title: "title",
-          path: "/thumb1.jpg",
+          path: "/slide1.jpg",
+          link: "https://vital-fit-two.vercel.app/home",
         },
         {
           title: "title",
-          path: "/thumb2.jpg",
+          path: "/slide2.jpg",
+          link: "https://vital-fit-two.vercel.app/home",
         },
         {
           title: "title",
-          path: "/thumb3.jpg",
+          path: "/slide3.jpg",
+          link: "https://vital-fit-two.vercel.app/home",
         },
         {
           title: "title",
-          path: "/thumb4.jpg",
+          path: "/slide4.jpg",
+          link: "https://vital-fit-two.vercel.app/home",
         },
       ],
     },
@@ -25,19 +29,23 @@ const workSlides = {
       images: [
         {
           title: "title",
-          path: "/thumb4.jpg",
+          path: "/slide5.jpg",
+          link: "",
         },
         {
           title: "title",
-          path: "/thumb1.jpg",
+          path: "/slide6.jpg",
+          link: "",
         },
         {
           title: "title",
-          path: "/thumb2.jpg",
+          path: "/slide7.jpg",
+          link: "",
         },
         {
           title: "title",
-          path: "/thumb3.jpg",
+          path: "/slide8.jpg",
+          link: "",
         },
       ],
     },
@@ -60,6 +68,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 //next img
 import Image from "next/image";
+import Link from "next/link";
 
 const WorkSlider = () => {
   return (
@@ -75,13 +84,17 @@ const WorkSlider = () => {
         return (
           <SwiperSlide key={index}>
             <div className="grid cursor-pointer grid-cols-2 grid-rows-2 gap-4">
-              {slide.images.map(({ path, title }, index) => {
+              {slide.images.map(({ path, title, link }, index) => {
                 return (
                   <div
                     key={index}
                     className="group relative flex items-center justify-center overflow-hidden rounded-lg"
                   >
-                    <div className="group relative flex items-center justify-center overflow-hidden">
+                    <Link
+                      href={link}
+                      target="blank_"
+                      className="group relative flex items-center justify-center overflow-hidden"
+                    >
                       {/* image */}
                       <Image src={path} width={500} height={300} alt="" />
                       {/* overlay gradient */}
@@ -90,9 +103,10 @@ const WorkSlider = () => {
                        to-[#4a22bd] opacity-0 transition-all duration-700 group-hover:opacity-80"
                       ></div>
                       {/* title */}
+
                       <div
                         className="absolute bottom-0 translate-y-full
-                       transition-all duration-300 group-hover:-translate-y-14 group-hover:xl:-translate-y-24"
+                        transition-all duration-300 group-hover:-translate-y-14 group-hover:xl:-translate-y-24"
                       >
                         <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
                           {/* title part 1 */}
@@ -101,7 +115,7 @@ const WorkSlider = () => {
                           {/* title part 2 */}
                           <div
                             className="translate-y-[500%] transition-all
-                          delay-150 duration-300 group-hover:translate-y-0"
+                            delay-150 duration-300 group-hover:translate-y-0"
                           >
                             PROJECT
                           </div>
@@ -109,13 +123,13 @@ const WorkSlider = () => {
                           {/* icon */}
                           <div
                             className="translate-y-[500%] text-xl 
-                          transition-all delay-200 duration-300 group-hover:translate-y-0"
+                            transition-all delay-200 duration-300 group-hover:translate-y-0"
                           >
                             <BsArrowRight />
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
                 );
               })}
