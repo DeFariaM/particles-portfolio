@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 
 //variants
 import { fadeIn } from "../variants";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
       <div className="h-full w-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
         <div
           className="container mx-auto flex h-full flex-col justify-center
-        text-center xl:pt-40 xl:text-left"
+        text-center xl:pt-20 xl:text-left"
         >
           {/* title */}
           <motion.h1
@@ -39,24 +40,30 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="mx-auto mb-10 max-w-sm xl:mx-0 xl:mb-16 xl:max-w-xl"
+            className="mx-auto mb-10 max-w-sm xl:mx-0 xl:mb-12 xl:max-w-xl"
           >
-            Lorem ipsun
+            I&apos;m a FullStack Web Developer but my true passion is the
+            FrontEnd development.
+            <br />
+            My passion for art and technology are the perfect combination to
+            make the app of your dreams come true.
           </motion.p>
 
           {/* btn */}
-          <div className="relative flex justify-center xl:hidden">
-            <ProjectsBtn />
-          </div>
-          <motion.div
-            variants={fadeIn("down", 0.4)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="hidden xl:flex"
-          >
-            <ProjectsBtn />
-          </motion.div>
+          <Link href={"/work"} className="hidden md:flex">
+            <div className="relative flex justify-center xl:hidden">
+              <ProjectsBtn />
+            </div>
+            <motion.div
+              variants={fadeIn("down", 0.4)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="hidden xl:flex"
+            >
+              <ProjectsBtn />
+            </motion.div>
+          </Link>
         </div>
       </div>
       {/* img */}
@@ -75,7 +82,7 @@ const Home = () => {
           animate="show"
           exit="hidden"
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="absolute -bottom-32 h-full max-h-[678px] w-full max-w-[737px]
+          className="absolute -bottom-32 h-full max-h-[578px] w-full max-w-[637px]
         lg:bottom-0 lg:right-[8%]"
         >
           <Avatar />
