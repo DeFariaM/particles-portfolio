@@ -10,30 +10,31 @@ import {
 
 // data
 const serviceData = [
-  {
+  /*  {
     icon: <RxCrop />,
     title: "Branding",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  }, */
+  {
+    icon: <RxDesktop />,
+    title: "Development",
+    description: "Fullstack development with JavaScript frameworks.",
   },
   {
     icon: <RxPencil2 />,
     title: "Design",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Mockups design of how your web app will look like with Figma.",
   },
-  {
-    icon: <RxDesktop />,
-    title: "Development",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
+  /*  {
     icon: <RxReader />,
     title: "Copywriting",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
+  }, */
   {
     icon: <RxRocket />,
     title: "SEO",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "To improve the viasualization of your web app.",
   },
 ];
 
