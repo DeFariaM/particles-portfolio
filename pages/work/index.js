@@ -7,7 +7,13 @@ import Circles from "../../components/Circles";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
-const Work = () => {
+//router
+import en from "../../public/locales/en";
+import es from "../../public/locales/es";
+
+const Work = ({ locale }) => {
+  const { work } = locale === "en" ? en : es;
+  const t = work;
   return (
     <div className="flex h-full items-center bg-primary/30 py-36">
       <Circles />
@@ -22,7 +28,7 @@ const Work = () => {
               exit="hidden"
               className="h2 xl:mt-12"
             >
-              My work <span className="text-accent">.</span>
+              {t.title} <span className="text-accent">.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn("up", 0.4)}
@@ -31,13 +37,9 @@ const Work = () => {
               exit="hidden"
               className="mx-auto mb-2 max-w-[400px] lg:mx-0"
             >
-              I have been working on personal and academic projects to improve
-              my skills as a developer. I use JavaScript frameworks such as
-              React, Next, TailwindCSS, Node and Express.
+              {t.paragraph1}
               <br />
-              <span className="hidden md:flex">
-                Currently learning UX//UI design to enhance my skills.
-              </span>
+              <span className="hidden md:flex">{t.paragraph2}</span>
             </motion.p>
           </div>
           {/* slider */}

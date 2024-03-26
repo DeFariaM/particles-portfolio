@@ -7,7 +7,14 @@ import Circles from "../../components/Circles";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
-const Services = () => {
+//imports for locale
+import en from "../../public/locales/en";
+import es from "../../public/locales/es";
+
+const Services = ({ locale }) => {
+  const { services } = locale === "en" ? en : es;
+  const t = services;
+
   return (
     <div className="flex h-full items-center bg-primary/30 py-36">
       <Circles />
@@ -22,7 +29,8 @@ const Services = () => {
               exit="hidden"
               className="h2 xl:mt-8"
             >
-              My services <span className="text-accent">.</span>
+              {t.title}
+              <span className="text-accent">.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn("up", 0.4)}
@@ -31,10 +39,9 @@ const Services = () => {
               exit="hidden"
               className="mx-auto mb-4 max-w-[400px] lg:mx-0"
             >
-              Although I am certified as a FullStack Web Developer, I am
-              constantly learning how to improve my work.
-              <br />I am currently studying UX/UI design and SEO to provide a
-              better service.
+              {t.paragraph1}
+              <br />
+              {t.paragraph2}
             </motion.p>
           </div>
           {/* slider */}
@@ -45,7 +52,7 @@ const Services = () => {
             exit="hidden"
             className="w-full xl:max-w-[65%]"
           >
-            <ServiceSlider />
+            <ServiceSlider locale={locale} />
           </motion.div>
         </div>
       </div>

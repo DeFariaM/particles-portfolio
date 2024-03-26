@@ -11,9 +11,18 @@ import { motion } from "framer-motion";
 
 //variants
 import { fadeIn } from "../variants";
+
+//next Link
 import Link from "next/link";
 
-const Home = () => {
+//imports for locale
+import en from "../public/locales/en";
+import es from "../public/locales/es";
+
+const Home = ({ locale }) => {
+  const { home } = locale === "en" ? en : es;
+  const t = home;
+
   return (
     <div className="h-screen bg-primary/60">
       {/* text */}
@@ -30,8 +39,8 @@ const Home = () => {
             exit="hidden"
             className="h1"
           >
-            Transforming ideas <br /> Into{" "}
-            <span className="text-accent">Digital Reality</span>
+            {t.title} <br /> {t.title2}{" "}
+            <span className="text-accent">{t.titleAccent}</span>
           </motion.h1>
 
           {/* subtitle */}
@@ -42,11 +51,9 @@ const Home = () => {
             exit="hidden"
             className="mx-auto mb-10 max-w-sm xl:mx-0 xl:mb-12 xl:max-w-xl"
           >
-            I&apos;m a FullStack Web Developer but my true passion is the
-            FrontEnd development.
+            {t.paragraph1}
             <br />
-            My passion for art and technology are the perfect combination to
-            make the app of your dreams come true.
+            {t.paragraph2}
           </motion.p>
 
           {/* btn */}

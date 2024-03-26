@@ -27,7 +27,7 @@ import {
 } from "react-icons/si";
 
 //  data
-const aboutData = [
+const aboutDataEn = [
   {
     title: "skills",
     info: [
@@ -97,6 +97,76 @@ const aboutData = [
     ],
   },
 ];
+const aboutDataEs = [
+  {
+    title: "skills",
+    info: [
+      {
+        title: "Desarrollo web",
+        icons: [<SiJavascript />, <SiTypescript />],
+      },
+      {
+        title: "FrontEnd",
+        icons: [
+          <FaHtml5 />,
+          <FaCss3 />,
+          <FaReact />,
+          <SiNextdotjs />,
+          <SiTailwindcss />,
+        ],
+      },
+      {
+        title: "BackEnd",
+        icons: [
+          <FaNodeJs />,
+          <SiExpress />,
+          <SiFirebase />,
+          <SiPostgresql />,
+          <SiSequelize />,
+        ],
+      },
+      {
+        title: "UI/UX Design",
+        icons: [<FaFigma />],
+      },
+    ],
+  },
+  /*   {
+    title: "awards",
+    info: [
+      {
+        title: "Webby Awards - Honoree",
+        stage: "2011 - 2012",
+      },
+      {
+        title: "Adobe Design Achievement Awards - Finalist",
+        stage: "2009 - 2010",
+      },
+    ],
+  }, */
+  {
+    title: "experiencia",
+    info: [
+      {
+        title: "Fullstack Web Developer - vitalFit",
+        stage: "2023 - 2024",
+      },
+      {
+        title: "Fullstack Web Developer - Dogkaholic",
+        stage: "2023",
+      },
+    ],
+  },
+  {
+    title: "certificados",
+    info: [
+      {
+        title: "FullStack Web Development - SoyHenry, Argentina",
+        stage: "2023 - 2024",
+      },
+    ],
+  },
+];
 
 //components
 
@@ -109,8 +179,15 @@ import { fadeIn } from "../../variants";
 //counter
 import CountUp from "react-countup";
 
-const About = () => {
+//imports for locale
+import en from "../../public/locales/en";
+import es from "../../public/locales/es";
+
+const About = ({ locale }) => {
   const [index, setIndex] = useState(0);
+  const { about } = locale === "en" ? en : es;
+  const t = about;
+  const toMap = locale === "en" ? aboutDataEn : aboutDataEs;
 
   return (
     <div className="h-full items-center bg-primary/30 py-32 text-center xl:text-left">
@@ -126,8 +203,8 @@ const About = () => {
             exit="hidden"
             className="h2"
           >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent designs.
+            {t.title} <span className="text-accent">{t.titleAccent}</span>{" "}
+            {t.title2}
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
@@ -136,11 +213,7 @@ const About = () => {
             exit="hidden"
             className="mx-auto mb-6 hidden max-w-[500px] px-2 text-xs md:flex md:text-base xl:mx-0 xl:mb-12 xl:px-0"
           >
-            6 years ago I was a graphic design student, but, being Venezuelan,
-            the situation in the country forced me to leave the country and,
-            consequently, abandon my degree. In the last year I made the
-            decision to take that passion for art and transform it into web
-            apps.
+            {t.paragraph}
           </motion.p>
           {/* this is where goes the counters */}
         </div>
@@ -153,7 +226,7 @@ const About = () => {
           className="flex h-[480px] w-full flex-col xl:w-[48%]"
         >
           <div className="mx-auto mb-4 flex gap-x-4  xl:mx-0 xl:gap-x-8">
-            {aboutData.map(({ title }, itemIndex) => {
+            {toMap.map(({ title }, itemIndex) => {
               return (
                 <div
                   key={itemIndex}
@@ -167,7 +240,7 @@ const About = () => {
             })}
           </div>
           <div className="flex flex-col items-center gap-y-2 py-2 xl:items-start xl:gap-y-4 xl:py-6">
-            {aboutData[index].info.map(({ title, stage, icons }, itemIndex) => {
+            {toMap[index].info.map(({ title, stage, icons }, itemIndex) => {
               return (
                 <div
                   key={itemIndex}

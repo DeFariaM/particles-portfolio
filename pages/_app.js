@@ -14,11 +14,11 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   return (
-    <Layout>
+    <Layout locale={router.locale}>
       <AnimatePresence mode="wait">
         <motion.div key={router.route} className="h-full">
           <Transition />
-          <Component {...pageProps} />
+          <Component {...pageProps} locale={router.locale} />
         </motion.div>
       </AnimatePresence>
     </Layout>

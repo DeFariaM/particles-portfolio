@@ -7,7 +7,7 @@ import Link from "next/link";
 //components
 import Socials from "./Socials";
 
-const Header = () => {
+const Header = ({ locale }) => {
   return (
     <header
       className="absolute z-30 flex w-full items-center px-16 xl:h-[90px] xl:px-0
@@ -26,7 +26,7 @@ const Header = () => {
             />
           </Link>
           {/* socials */}
-          <Socials />
+          <Socials locale={locale} />
         </div>
       </div>
     </header>
