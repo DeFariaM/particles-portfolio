@@ -50,7 +50,7 @@ const Home = () => {
           </motion.p>
 
           {/* btn */}
-          <Link href={"/work"} className="hidden md:flex">
+          <div className="hidden md:flex">
             <div className="relative flex justify-center xl:hidden">
               <ProjectsBtn />
             </div>
@@ -63,7 +63,7 @@ const Home = () => {
             >
               <ProjectsBtn />
             </motion.div>
-          </Link>
+          </div>
         </div>
       </div>
       {/* img */}
