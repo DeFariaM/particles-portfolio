@@ -78,7 +78,6 @@ import { FreeMode, Pagination } from "swiper";
 
 const ServiceSlider = ({ locale }) => {
   const toMap = locale === "en" ? enData : esData;
-  console.log(locale);
 
   return (
     <Swiper

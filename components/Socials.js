@@ -5,8 +5,6 @@ import Link from "next/link";
 import { RiLinkedinBoxFill, RiGithubFill } from "react-icons/ri";
 
 const Socials = ({ locale }) => {
-  console.log(locale);
-
   return (
     <div className="flex items-center gap-x-5 text-3xl">
       <Link
